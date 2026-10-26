@@ -94,7 +94,6 @@ jobs:
         run: |
 
           python src/pipeline/collect.py \
-
             --output data/raw/iris_raw.csv
 
       - name: Preprocess Iris data
@@ -102,9 +101,7 @@ jobs:
         run: |
 
           python src/pipeline/preprocess.py \
-
             --input data/raw/iris_raw.csv \
-
             --output data/processed/iris_preprocessed.csv
 
       - name: Engineer features
@@ -112,9 +109,7 @@ jobs:
         run: |
 
           python src/pipeline/features.py \
-
             --input data/processed/iris_preprocessed.csv \
-
             --output data/processed/iris_features.csv
 
       - name: Run complete test suite
@@ -122,13 +117,9 @@ jobs:
         run: |
 
           python -m pytest tests/ -v \
-
             --cov=src \
-
             --cov-report=term-missing \
-
             --cov-report=xml:coverage.xml \
-
             --junitxml=test-results.xml
 
       - name: Upload test and coverage reports
@@ -186,7 +177,6 @@ jobs:
         run: |
 
           python src/pipeline/collect.py \
-
             --output data/raw/iris_raw.csv
 
       - name: Preprocess Iris data
@@ -194,9 +184,7 @@ jobs:
         run: |
 
           python src/pipeline/preprocess.py \
-
             --input data/raw/iris_raw.csv \
-
             --output data/processed/iris_preprocessed.csv
 
       - name: Engineer features
@@ -204,9 +192,7 @@ jobs:
         run: |
 
           python src/pipeline/features.py \
-
             --input data/processed/iris_preprocessed.csv \
-
             --output data/processed/iris_features.csv
 
       - name: Validate model quality
